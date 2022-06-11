@@ -2,14 +2,13 @@ import react from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
-import { configureStore, applyMiddleware, compose } from "@reduxjs/toolkit";
+import { createStore, applyMiddleware, compose } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 
-import  reducers  from './reducers';
+import  Allreducers  from './reducers';
 
 
-const store = configureStore(reducers, compose(applyMiddleware(thunk)));
-
+const store = createStore(Allreducers, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
